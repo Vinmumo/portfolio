@@ -21,3 +21,19 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# VSCode
+.vscode/
+
+*.swp
+
+# Log files
+*.log
+
+# Build output
+*.cache/
+dist/
+
+# Temporary files
+*.tmp
+*.temp
