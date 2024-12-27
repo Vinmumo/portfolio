@@ -1,16 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function Header() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-      <Navbar.Brand href="/">My Portfolio</Navbar.Brand>
-      <Navbar.Toggle aria-controls="navbar-nav" />
-      <Navbar.Collapse id="navbar-nav">
+      <Navbar.Brand href="/">Vincent Mumo</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/portfolio">Portfolio</Nav.Link>
+          <LinkContainer to="/">
+            <Nav.Link>About</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/projects">
+            <Nav.Link>Projects</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/resume">
+            <Nav.Link>Resume</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/contact">
+            <Nav.Link>Contact</Nav.Link>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
