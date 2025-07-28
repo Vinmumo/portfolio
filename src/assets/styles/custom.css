@@ -3,13 +3,47 @@ body {
     background-color: #f8f9fa;
   }
   
-  h1, h2, h3 {
+h1, h2, h3 {
     color: #343a40;
   }
-  
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+
+
+img.rounded-circle {
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 80px 0;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: #fff;
+}
+
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  border-radius: 20px;
+}

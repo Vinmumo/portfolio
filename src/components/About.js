@@ -1,6 +1,7 @@
 import React from 'react';
 import myPhoto from '../assets/images/profile.jpg';
 
+
 function About() {
   return (
     <div className="container text-center mt-5">

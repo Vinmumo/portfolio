@@ -1,11 +1,46 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import '../assets/styles/custom.css';
+
+
+import About from '../components/About';
+import Projects from '../components/Projects';
+import Resume from '../components/Resume';
+import Contact from '../components/Contact';
 
 function Home() {
   return (
-    <div className="container text-center mt-5">
-      <h1>Welcome to My Portfolio</h1>
-      <p className="lead">Showcasing my projects and skills.</p>
-    </div>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Vincent Mumo | Portfolio</title>
+        <meta
+          name="description"
+          content="My portfolio showcasing my skills and projects."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
+
+
+      <main>
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+
+        <section id="resume">
+          <Resume />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+
+    </>
   );
 }
 

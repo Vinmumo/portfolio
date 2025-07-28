@@ -7,9 +7,14 @@ function Projects() {
     <div className="container mt-5">
       <h2 className="text-center">My Projects</h2>
       <div className="row">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+        {projects.length > 0 ? (
+  projects.map((project, index) => (
+    <ProjectCard key={index} project={project} />
+          ))
+        ) : (
+          <p>No projects available at the moment.</p>
+        )}
+
       </div>
     </div>
   );
