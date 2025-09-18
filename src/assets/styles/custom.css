@@ -1,17 +1,17 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-  }
-  
-h1, h2, h3 {
-    color: #343a40;
-  }
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
 
+h1, h2, h3 {
+  color: #343a40;
+}
 
 img.rounded-circle {
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -27,7 +27,6 @@ footer {
   background-color: #343a40;
   color: #fff;
 }
-
 
 .card-img-top {
   height: 200px;
