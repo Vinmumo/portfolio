@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import '../assets/styles/custom.css';
+// import '../assets/styles/custom.css';
 
 
 import About from '../components/About';

@@ -11,8 +11,9 @@ function About() {
           <img
             src={myPhoto}
             alt="Vincent Mumo"
-            className="rounded-full shadow-lg w-64 h-64 object-cover"
+            className="rounded-full shadow-lg w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover"
           />
+
         </div>
 
         {/* Info */}
