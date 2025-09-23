@@ -10,9 +10,9 @@ function Contact() {
         </p>
 
         <div className="space-y-4">
-          <p>Email: <a href="mailto:vincent@example.com" className="text-blue-600 hover:underline">vincent@example.com</a></p>
-          <p>LinkedIn: <a href="https://linkedin.com/in/vincentmumo" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">vincentmumo</a></p>
-          <p>GitHub: <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">yourgithub</a></p>
+          <p>Email: <a href="mailto:vinnymummo@gmail.com" className="text-blue-600 hover:underline">vinnymummo@gmail.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/vincent-mumo-940635252/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">vincentmumo</a></p>
+          <p>GitHub: <a href="https://github.com/Vinmumo" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Vinmumo</a></p>
         </div>
       </div>
     </section>

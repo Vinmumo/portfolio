@@ -1,24 +1,27 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import Don from '../assets/images/don.jpeg';
+import Ireporter from '../assets/images/ireporter.jpg';
+import Escrow from '../assets/images/escrow.jpg';
 
 const projects = [
   {
-    title: 'Portfolio Website',
-    description: 'A modern portfolio built with React and Tailwind.',
-    image: 'https://via.placeholder.com/400x200',
-    link: 'https://your-portfolio-link.com',
+    title: 'EscrowEase',
+    description: 'Welcome to our escrow service, where trust meets efficiency. With a commitment to safeguarding your transactions, we provide a secure platform for seamless exchanges. Our experienced team ensures transparency and reliability every step of the way, giving you peace of mind in every deal.',
+    image: Escrow,
+    link: 'https://escrow-ease-group-project.vercel.app/',
   },
   {
-    title: 'Flask Blog',
-    description: 'A blog platform built with Flask and PostgreSQL.',
-    image: 'https://via.placeholder.com/400x200',
-    link: 'https://github.com/yourgithub/flask-blog',
+    title: 'Don Jerseys',
+    description: 'An Ecommerce website for sports jerseys using React and Firebase.',
+    image: Don,
+    link: '',
   },
   {
-    title: 'E-commerce Template',
-    description: 'A mock e-commerce frontend built with React.',
-    image: 'https://via.placeholder.com/400x200',
-    link: 'https://github.com/yourgithub/ecommerce',
+    title: 'I-Reporter',
+    description: 'Empowering citizens to speak up against corruption, fraud, and injustice. Stay anonymous, stay protected, and see real change as your reports drive accountability and transform communities.',
+    image: Ireporter,
+    link: 'https://i-reporter-client-1.vercel.app/',
   },
 ];
 

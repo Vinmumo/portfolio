@@ -20,7 +20,7 @@ function About() {
         <div>
           <h1 className="text-4xl font-bold text-gray-800">Vincent Mumo</h1>
           <p className="mt-2 text-lg text-blue-600">
-            Full Stack Developer • React • Flask • Bootstrap
+            Full Stack Developer • React • Flask • Bootstrap • Tailwind
           </p>
           <p className="mt-4 text-gray-600 leading-relaxed">
             I am a passionate developer with a strong background in web development,
