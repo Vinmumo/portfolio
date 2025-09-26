@@ -9,7 +9,7 @@ function Resume() {
           Download my resume or view it online:
         </p>
         <a
-          href="/resume.pdf"
+          href="./assets/Vincent_Mumo_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition"

@@ -1,8 +1,16 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 
 function ProjectCard({ project }) {
   return (
-    <div className="bg-gray-50 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+    <motion.div
+      className="bg-gray-50 rounded-xl shadow hover:shadow-xl transition overflow-hidden"
+      whileHover={{ y: -5 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
       <div className="p-5">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -16,7 +24,7 @@ function ProjectCard({ project }) {
           View Project →
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
