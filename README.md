@@ -138,8 +138,6 @@ The portfolio features smooth animations powered by Framer Motion:
 
 ## ✨ Performance
 
-- **Bundle Size**: ~112 KB (gzipped)
-- **CSS**: ~5 KB (gzipped)
 - **Load Time**: Fast (< 1 second on average connection)
 - **Performance Score**: 95+
 - **Mobile Optimized**: Fully responsive and touch-friendly
