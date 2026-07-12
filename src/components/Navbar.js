@@ -1,136 +1,104 @@
 import React, { useState } from "react";
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
-import { motion } from "framer-motion";
+import { Menu, X, Download } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { site, navLinks } from "../data/site";
+import SocialLinks from "./SocialLinks";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#resume", label: "Resume" },
-    { href: "#contact", label: "Contact" },
-  ];
-
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <motion.a
-            href="/"
-            className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            VM
-          </motion.a>
-
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link, idx) => (
-              <motion.a
-                key={idx}
-                href={link.href}
-                className="px-4 py-2 text-gray-700 font-medium rounded-lg hover:bg-gray-100 transition-all relative group"
-                whileHover={{ scale: 1.05 }}
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Desktop Social Icons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <motion.a
-              href="https://github.com/Vinmumo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-            >
-              <Github size={20} />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/vincent-mumo-940635252/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-            >
-              <Linkedin size={20} />
-            </motion.a>
-            <motion.a
-              href="mailto:vinnymummo@gmail.com"
-              className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-            >
-              <Mail size={20} />
-            </motion.a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            className="lg:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </motion.button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <motion.div
-        className="lg:hidden bg-white border-t border-gray-200"
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? "auto" : 0 }}
-        transition={{ duration: 0.3 }}
-        style={{ overflow: "hidden" }}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-ink/85 backdrop-blur-md border-b border-zinc-800">
+      <nav
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+        aria-label="Main navigation"
       >
-        <div className="px-4 sm:px-6 py-4 space-y-2">
+        {/* Logo */}
+        <a
+          href="#top"
+          className="font-display font-bold text-xl text-zinc-100 tracking-tight"
+        >
+          VM<span className="text-accent">.</span>
+        </a>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link, idx) => (
-            <motion.a
-              key={idx}
+            <a
+              key={link.href}
               href={link.href}
-              className="block px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white transition-all"
-              onClick={() => setIsOpen(false)}
-              whileHover={{ paddingLeft: 24 }}
+              className="px-4 py-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
             >
+              <span className="font-mono text-accent text-xs mr-1.5" aria-hidden="true">
+                0{idx + 1}.
+              </span>
               {link.label}
-            </motion.a>
+            </a>
           ))}
-          <div className="flex items-center justify-center space-x-4 pt-4 border-t border-gray-200">
-            <motion.a
-              href="https://github.com/Vinmumo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              whileHover={{ scale: 1.2 }}
-            >
-              <Github size={20} />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/vincent-mumo-940635252/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              whileHover={{ scale: 1.2 }}
-            >
-              <Linkedin size={20} />
-            </motion.a>
-            <motion.a
-              href="mailto:vinnymummo@gmail.com"
-              className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              whileHover={{ scale: 1.2 }}
-            >
-              <Mail size={20} />
-            </motion.a>
-          </div>
+          <a
+            href={site.resume}
+            download="Vincent-Mumo-Resume.pdf"
+            className="ml-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent border border-accent/40 rounded-md hover:bg-accent/10 hover:border-accent transition-colors"
+          >
+            <Download size={15} aria-hidden="true" />
+            Resume
+          </a>
         </div>
-      </motion.div>
-    </nav>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden p-2 text-zinc-300 hover:text-accent rounded-md transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
+          {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            id="mobile-menu"
+            className="md:hidden bg-ink border-b border-zinc-800 overflow-hidden"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <div className="px-4 sm:px-6 py-4 space-y-1">
+              {navLinks.map((link, idx) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block px-3 py-3 text-zinc-300 hover:text-accent rounded-md hover:bg-zinc-900 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span className="font-mono text-accent text-xs mr-2" aria-hidden="true">
+                    0{idx + 1}.
+                  </span>
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href={site.resume}
+                download="Vincent-Mumo-Resume.pdf"
+                className="flex items-center gap-2 px-3 py-3 text-accent font-medium rounded-md hover:bg-zinc-900 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <Download size={16} aria-hidden="true" />
+                Download Resume
+              </a>
+              <div className="pt-3 border-t border-zinc-800">
+                <SocialLinks />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }
 

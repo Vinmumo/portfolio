@@ -1,83 +1,115 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { site, projects } from "../data/site";
 import ProjectCard from "./ProjectCard";
-import Don from "../assets/images/don.jpeg";
-import Ireporter from "../assets/images/ireporter.jpg";
-import Escrow from "../assets/images/escrow.jpg";
+import SectionHeading from "./SectionHeading";
 
-const projects = [
-  {
-    title: "EscrowEase",
-    description:
-      "A secure escrow service platform ensuring transparency and reliability in transactions. Built with modern technologies for seamless user experience.",
-    image: Escrow,
-    link: "https://escrow-ease-group-project.vercel.app/",
-  },
-  {
-    title: "Don Jerseys",
-    description: "An Ecommerce platform for sports jerseys with full-featured shopping cart, payments, and inventory management built with React and Firebase.",
-    image: Don,
-    link: "",
-  },
-  {
-    title: "I-Reporter",
-    description:
-      "A citizen empowerment platform enabling anonymous reporting of corruption, fraud, and injustice with secure data management.",
-    image: Ireporter,
-    link: "https://i-reporter-client-1.vercel.app/",
-  },
-];
+const featured = projects.find((p) => p.featured);
+const rest = projects.filter((p) => !p.featured);
 
 function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-40 left-10 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-40 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <section id="work" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeading index="01" title="Selected Work" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Showcasing my best work across web development, e-commerce, and citizen engagement platforms.
-          </p>
-        </motion.div>
+        {/* Featured project */}
+        {featured && (
+          <motion.article
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20 p-6 sm:p-10 rounded-2xl border border-zinc-800 bg-zinc-900/40"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-80px" }}
+          >
+            <a
+              href={featured.live || featured.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block overflow-hidden rounded-xl border border-zinc-800"
+              aria-label={`${featured.title} — open live site`}
+            >
+              <img
+                src={featured.image}
+                alt={`Screenshot of ${featured.title}`}
+                className="w-full aspect-[4/3] object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+              />
+            </a>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <div>
+              <p className="font-mono text-accent text-xs uppercase tracking-widest mb-3">
+                Featured Project
+              </p>
+              <h3 className="font-display font-bold text-3xl text-zinc-100 tracking-tight mb-4">
+                {featured.title}
+              </h3>
+              <p className="leading-relaxed mb-6">{featured.description}</p>
+
+              <ul className="flex flex-wrap gap-2 mb-8" aria-label="Technologies used">
+                {featured.stack.map((tech) => (
+                  <li
+                    key={tech}
+                    className="font-mono text-xs text-zinc-300 px-3 py-1.5 rounded-full border border-zinc-700"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex items-center gap-5">
+                {featured.live && (
+                  <a
+                    href={featured.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent font-medium hover:text-accent-hover transition-colors"
+                  >
+                    <ExternalLink size={17} aria-hidden="true" />
+                    Live site
+                  </a>
+                )}
+                <a
+                  href={featured.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-zinc-300 font-medium hover:text-accent transition-colors"
+                >
+                  <Github size={17} aria-hidden="true" />
+                  Code
+                </a>
+              </div>
+            </div>
+          </motion.article>
+        )}
+
+        {/* Other projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {rest.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
 
-        {/* CTA */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-700 mb-6 text-lg">Want to see more of my work?</p>
-          <motion.a
-            href="https://github.com/Vinmumo"
+          <a
+            href={site.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="group inline-flex items-center gap-2 font-mono text-sm text-zinc-300 hover:text-accent transition-colors"
           >
-            Visit My GitHub
-          </motion.a>
+            More on GitHub
+            <ArrowUpRight
+              size={16}
+              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              aria-hidden="true"
+            />
+          </a>
         </motion.div>
       </div>
     </section>

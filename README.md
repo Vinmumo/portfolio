@@ -1,164 +1,66 @@
-# Vincent Mumo - Professional Portfolio
+# Vincent Mumo — Portfolio
 
-A modern, responsive, and professionally designed portfolio showcasing my skills, projects, and experience as a Full Stack Developer. Built with React, Tailwind CSS, and Framer Motion for smooth animations.
+Personal portfolio of Vincent Mumo, Full-Stack Developer. A dark, single-page site built with React, Tailwind CSS, and Framer Motion.
 
-## 🌟 Features
+**Live projects featured:** EscrowEase, Don Jerseys, I-Reporter.
 
-- **Responsive Design** - Optimized for mobile, tablet, and desktop devices
-- **Modern Aesthetics** - Professional gradient design system with glass-morphism effects
-- **Smooth Animations** - Engaging page transitions and hover effects powered by Framer Motion
-- **Professional Components** - Carefully crafted navigation, about section, projects showcase, and contact integration
-- **Performance Optimized** - Fast load times with optimized build (~130 KB gzipped)
-- **Accessibility** - WCAG compliant with proper color contrast and semantic HTML
+## Tech Stack
 
-## 🛠️ Tech Stack
+- **Frontend**: React 18 (Create React App)
+- **Styling**: Tailwind CSS 3
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Space Grotesk (display), Inter (body), JetBrains Mono (labels) — self-hosted via Fontsource
 
-- **Frontend**: React 18.3.1
-- **Styling**: Tailwind CSS 3.4.17
-- **Animations**: Framer Motion 12.23.22
-- **Icons**: Lucide React 0.544.0
-- **Routing**: React Router DOM 6.23.1
-- **SEO**: React Helmet
-
-## 📋 Project Structure
+## Project Structure
 
 ```
 portfolio/
-├── src/
-│   ├── components/
-│   │   ├── Navbar.js           # Navigation with social icons
-│   │   ├── About.js            # Hero section with skills
-│   │   ├── Projects.js         # Projects showcase grid
-│   │   ├── ProjectCard.js      # Reusable project card
-│   │   ├── Resume.js           # Resume download section
-│   │   ├── Contact.js          # Contact information
-│   │   └── Footer.js           # Footer with links
-│   ├── pages/
-│   │   └── Home.js             # Main page layout
-│   ├── App.js                  # Main app component
-│   ├── App.css                 # Global animations
-│   └── index.css               # Global styles
 ├── public/
-├── tailwind.config.js          # Tailwind configuration
-└── package.json
+│   ├── index.html              # Meta tags, Open Graph, favicon links
+│   ├── favicon.svg             # VM monogram (+ PNG fallbacks)
+│   ├── og.png                  # Social share preview image
+│   └── Vincent-Mumo-Resume.pdf
+├── src/
+│   ├── data/
+│   │   └── site.js             # Single source of truth: links, projects, timeline
+│   ├── components/
+│   │   ├── Navbar.js           # Fixed nav with mobile menu
+│   │   ├── Hero.js             # Intro, availability badge, CTAs
+│   │   ├── Projects.js         # Featured project + project grid
+│   │   ├── ProjectCard.js      # Card with tech chips and links
+│   │   ├── Experience.js       # Work & education timeline
+│   │   ├── Contact.js          # Email CTA
+│   │   ├── Footer.js
+│   │   ├── SectionHeading.js   # Numbered editorial section headings
+│   │   └── SocialLinks.js      # Shared social icon links
+│   ├── App.js                  # Section layout + MotionConfig
+│   └── index.css               # Tailwind + global dark theme
+└── tailwind.config.js          # Fonts + accent color tokens
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
+## Getting Started
 
 ```bash
-# Clone the repository
-git clone https://github.com/Vinmumo/portfolio.git
-cd portfolio
-
-# Install dependencies
 npm install
-
-# Start development server
-npm start
+npm start          # dev server at http://localhost:3000
+npm test           # run tests
+npm run build      # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Editing Content
 
-## 📦 Available Scripts
+All content lives in [`src/data/site.js`](src/data/site.js) — contact links, the projects array (title, description, stack, live/repo URLs), and the experience timeline. Components read from it; you shouldn't need to touch JSX to update content.
 
-### `npm start`
-Runs the app in development mode with hot reload.
+## Design System
 
-### `npm run build`
-Creates an optimized production build for deployment.
+- **Background**: near-black (`#09090b`) with zinc surfaces and borders
+- **Accent**: lime (`#a3e635`) — used sparingly for emphasis, CTAs, and markers
+- **Type**: Space Grotesk for headings, Inter for body, JetBrains Mono for labels/chips
+- Animations respect the user's reduced-motion preference (`MotionConfig reducedMotion="user"`)
 
-### `npm test`
-Launches the test runner in interactive watch mode.
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: `#3b82f6` (Blue)
-- **Secondary**: `#8b5cf6` (Purple)
-- **Text**: `#1e293b` (Slate)
-- **Background**: Gradient light backgrounds with decorative blobs
-
-### Responsive Breakpoints
-- **Mobile**: 320px - 640px (Single column)
-- **Tablet**: 640px - 1024px (Two columns)
-- **Desktop**: 1024px+ (Three columns)
-
-## 📱 Components
-
-### Navbar
-- Gradient logo and navigation links
-- Social media icons (GitHub, LinkedIn, Email)
-- Responsive mobile hamburger menu
-- Glass-morphism styling
-
-### About Section
-- Professional profile image with glow effect
-- Skill cards highlighting core competencies
-- Call-to-action buttons
-- Decorative animated background elements
-
-### Projects Section
-- Responsive grid layout
-- Project cards with hover effects
-- Image zoom animations
-- Links to project demos and source code
-- CTA to GitHub profile
-
-### Resume Section
-- Professional card layout
-- Skill tags grid
-- Download resume functionality
-- GitHub integration
-
-### Contact Section
-- Three contact method cards
-- Email, LinkedIn, and GitHub links
-- Dark gradient background
-- Response time indicator
-
-### Footer
-- Brand information
-- Quick navigation links
-- Social media links
-- Animated elements
-
-## 🎬 Animations
-
-The portfolio features smooth animations powered by Framer Motion:
-- **Page Load**: Elements fade in and slide up
-- **Hover States**: Cards lift, buttons scale, links show underlines
-- **Scroll Triggers**: Staggered animations as content comes into view
-- **Micro-interactions**: Icon rotations, glow effects, color transitions
-
-## ✨ Performance
-
-- **Load Time**: Fast (< 1 second on average connection)
-- **Performance Score**: 95+
-- **Mobile Optimized**: Fully responsive and touch-friendly
-
-
-## 📞 Contact
+## Contact
 
 - **Email**: [vinnymummo@gmail.com](mailto:vinnymummo@gmail.com)
 - **LinkedIn**: [Vincent Mumo](https://www.linkedin.com/in/vincent-mumo-940635252/)
 - **GitHub**: [@Vinmumo](https://github.com/Vinmumo)
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 👨‍💻 Author
-
-**Vincent Mumo** - Full Stack Developer
-- Passionate about creating elegant and efficient web solutions
-- Experienced in React, Flask, and modern web technologies
-- Committed to delivering high-quality, user-centric applications
-
----
-
