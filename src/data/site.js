@@ -6,7 +6,7 @@ export const site = {
   name: "Vincent Mumo",
   role: "Full-Stack Developer",
   location: "Nairobi, Kenya",
-  email: "vinnymummo@gmail.com",
+  email: "vmumo89@gmail.com",
   resume: "/Vincent-Mumo-Resume.pdf",
   github: "https://github.com/Vinmumo",
   linkedin: "https://www.linkedin.com/in/vincent-mumo-940635252/",
@@ -18,7 +18,6 @@ export const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
-// TODO: point `repo` at each project's actual repository.
 export const projects = [
   {
     title: "EscrowEase",
@@ -27,26 +26,26 @@ export const projects = [
       "A secure escrow platform that holds funds in trust until both parties fulfil their side of a transaction — covering deal creation, milestone tracking, and dispute flows. Built as a team project with a React front end against a Flask REST API.",
     image: escrowImg,
     stack: ["React", "Tailwind CSS", "Flask", "PostgreSQL"],
-    live: "https://escrow-ease-group-project.vercel.app/",
-    repo: "https://github.com/Vinmumo",
+    live: "https://escrow-ease.vercel.app/",
+    repo: "https://github.com/4kClinton/Escrow-ease-group-Project",
   },
   {
     title: "Don Jerseys",
     description:
-      "An e-commerce store for sports jerseys with product catalogue, shopping cart, checkout, and inventory management.",
+      "A full-stack jersey store with product variants, cart customization, an admin catalogue, promo codes, an order-status workflow, and M-Pesa checkout. React storefront backed by a Flask REST API with JWT-protected admin routes, server-side order totals, and inventory reservation; containerized with Docker.",
     image: donImg,
-    stack: ["React", "Firebase"],
-    live: "",
-    repo: "https://github.com/Vinmumo",
+    stack: ["React", "Flask", "M-Pesa", "Docker"],
+    live: "https://don-jerseys.vercel.app/",
+    repo: "https://github.com/Vinmumo/Don-Jerseys",
   },
   {
     title: "I-Reporter",
     description:
-      "A civic platform that lets citizens report corruption and incidents that need government intervention, with geolocation, media attachments, and admin status tracking.",
+      "A civic platform that lets citizens report corruption and incidents that need government intervention, with geolocation tagging, media attachments, and admin status tracking.",
     image: ireporterImg,
     stack: ["React", "Flask", "PostgreSQL"],
     live: "https://i-reporter-client-1.vercel.app/",
-    repo: "https://github.com/Vinmumo",
+    repo: "https://github.com/Vinmumo/IReporter-server",
   },
 ];
 
